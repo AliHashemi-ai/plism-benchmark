@@ -12,12 +12,12 @@
 
 PARTITION=${1:-gpu-2h}                                       # SLURM partition
 GPUS=${2:-1}                                                 # Number of GPUs
-CPUS=${3:-4}                                                 # CPU cores per task
-MEMORY=${4:-32G}                                             # Memory allocation
+CPUS=${3:-2}                                                 # CPU cores per task
+MEMORY=${4:-16G}                                             # Memory allocation
 TIME_LIMIT=${5:-2:00:00}                                     # Job time limit
 CONSTRAINT=${6:-}                                            # GPU type constraint (optional)
 EXCLUDE_NODES=${7:-}                                         # Nodes to exclude (optional)
-JOB_NAME=${8:-jupyter_apptainer}                             # SLURM job name
+JOB_NAME=${8:-plism}                             # SLURM job name
 LOG_DIR=${9:-$HOME/logs}                                     # Directory for job logs
 CONTAINER=${10:-$HOME/containers/plism/plism.sif}            # Apptainer container
 OVERLAY=${11:-$HOME/containers/plism/plism_overlay.img}      # Writable overlay
@@ -70,7 +70,6 @@ srun --partition="$PARTITION" \
      --mem="$MEMORY" \
      --time="$TIME_LIMIT" \
      --job-name="$JOB_NAME" \
-     --output="$LOG_DIR/${JOB_NAME}-%j.out" \
      --exclusive \
      --mail-user=hashemi@tu-berlin.de \
      --mail-type=BEGIN,END,FAIL \
