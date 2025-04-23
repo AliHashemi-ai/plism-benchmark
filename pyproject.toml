@@ -54,6 +54,7 @@ optional = true
 [tool.poetry.group.dev.dependencies]
 nbconvert = "*"
 notebook = "*"
+pytest = "^8.3.5"
 
 [tool.poetry.group.docs]
 optional = true
