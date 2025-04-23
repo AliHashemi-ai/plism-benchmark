@@ -13,7 +13,7 @@
 PARTITION=${1:-gpu-2h}                             # SLURM partition (e.g., gpu-2h, gpu-5h, gpu-7d)
 GPUS=${2:-1}                                       # Number of GPUs
 CPUS=${3:-4}                                       # Number of CPUs per task
-MEMORY=${4:-32G}                                   # RAM (e.g., 16G, 64G)
+MEMORY=${4:-16G}                                   # RAM (e.g., 16G, 64G)
 TIME_LIMIT=${5:-2:00:00}                           # Time limit (HH:MM:SS)
 CONSTRAINT=${6:-}                                  # GPU type (optional: 80gb, 3090, h100)
 EXCLUDE_NODES=${7:-}                               # Nodes to exclude (comma-separated)
